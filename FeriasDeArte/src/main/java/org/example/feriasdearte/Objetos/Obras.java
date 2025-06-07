@@ -15,18 +15,20 @@ public class Obras {
     private int artista;
 
 
-    public Obras(String titulo, String descripcion, String disponible, int precio) {
+    public Obras(String titulo, String descripcion, int precio, String disponible, int artista) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.disponible = disponible;
         this.precio = precio;
+        this.artista = artista;
     }
 
-    public Obras(int id, String titulo, String descripcion, String disponible, int precio) {
+    public Obras(int id, String titulo, String descripcion, int precio, String disponible, int artista) {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.disponible = disponible;
         this.precio = precio;
+        this.artista = artista;
     }
 }

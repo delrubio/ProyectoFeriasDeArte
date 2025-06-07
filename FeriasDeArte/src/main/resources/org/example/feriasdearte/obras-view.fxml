@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.feriasdearte.Controller">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.feriasdearte.Controladores.ConObras">
     <children>
         <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="626.0" prefWidth="906.0" spacing="20.0">
             <padding>
                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
             </padding>
             <children>
-                <TableView fx:id="tablaEstudiantes" prefHeight="200.0" prefWidth="200.0">
+                <TableView fx:id="tablaObras" prefHeight="200.0" prefWidth="200.0">
                     <columns>
-                        <TableColumn fx:id="idTable" prefWidth="158.4000244140625" text="ObraID" />
+                        <TableColumn fx:id="idObra" prefWidth="158.4000244140625" text="ObraID" />
                         <TableColumn fx:id="tituloTable" prefWidth="113.59993934631348" text="Titulo" />
                         <TableColumn fx:id="descripcionTable" prefWidth="190.39996337890625" text="Descripción" />
                         <TableColumn fx:id="precioTable" prefWidth="223.2000732421875" text="Precio" />
@@ -28,10 +34,11 @@
                     </children>
                 </HBox>
                 <Label fx:id="welcomeText" />
-                <TextField fx:id="TituloTextField" promptText="Introduce un Nombre" />
+                <TextField fx:id="tituloTextField" promptText="Introduce un Título" />
                 <TextField fx:id="descripcionTextField" layoutX="30.0" layoutY="362.0" promptText="Introduce una descripcion" />
-                <TextField fx:id="DisponibleTextField" promptText="Introduce su disponibilidad" />
                 <TextField fx:id="precioTextField" promptText="Introduce un precio" />
+                <TextField fx:id="disponibleTextField" promptText="Introduce su disponibilidad" />
+            <TextField fx:id="artistaTextField" layoutX="30.0" layoutY="464.0" promptText="ID del Artista" />
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
                         <Button fx:id="anyadirButton" onAction="#onAnyadirButtonClickObras" text="Añadir" />

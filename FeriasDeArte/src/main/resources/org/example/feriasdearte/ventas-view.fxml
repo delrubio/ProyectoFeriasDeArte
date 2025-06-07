@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.feriasdearte.Controller">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.feriasdearte.Controladores.ConVentas">
     <children>
         <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="626.0" prefWidth="906.0" spacing="20.0">
             <padding>
@@ -20,7 +20,7 @@
                   <TableColumn fx:id="asistenteTable" prefWidth="113.59993934631348" text="Asistente" />
                     </columns>
                 </TableView>
-            <Button fx:id="facturaButton" layoutX="415.0" layoutY="421.0" mnemonicParsing="false" onAction="#buttonInicio" text="Generar Factura" />
+            <Button fx:id="facturaButton" layoutX="415.0" layoutY="421.0" mnemonicParsing="false" onAction="#generarFactura" text="Generar Factura" />
                 <Button fx:id="buttonInicio" mnemonicParsing="false" onAction="#buttonInicio" text="Volver Al Inicio" />
             </children>
         </VBox>
