@@ -86,8 +86,8 @@ public class ManAsistentes {
         String query;
 
         query = "UPDATE asistentes SET nombre = '" + asistente.getNombre()
-                + "', telefono = '" + asistente.getEmail()
-                + "', email = '" + asistente.getTelefono()
+                + "', email = '" + asistente.getEmail()
+                + "', telefono = '" + asistente.getTelefono()
                 + "' WHERE asistenteid = '" + id + "'";
 
         Statement stmt;

@@ -3,7 +3,6 @@ package org.example.feriasdearte.Mantenimientos;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.example.feriasdearte.Objetos.Entradas;
-import org.example.feriasdearte.Objetos.Ventas;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -11,8 +10,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.*;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
 
 public class ManEntradas {
 

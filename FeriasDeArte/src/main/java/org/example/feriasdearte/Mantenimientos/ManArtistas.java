@@ -103,14 +103,14 @@ public class ManArtistas {
 
         if (artista.getBiografia() == null) {
             query = "UPDATE artistas SET nombre = '" + artista.getNombre()
-                    + "', telefono = '" + artista.getEmail()
-                    + "', email = '" + artista.getTelefono()
+                    + "', email = '" + artista.getEmail()
+                    + "', telefono = '" + artista.getTelefono()
                     + "' WHERE artistaid = '" + id + "'";
         }else{
             query = "UPDATE artistas SET nombre = '" + artista.getNombre()
                     + "', biografia = '" + artista.getBiografia()
-                    + "', telefono = '" + artista.getEmail()
-                    + "', email = '" + artista.getTelefono()
+                    + "', email = '" + artista.getEmail()
+                    + "', telefono = '" + artista.getTelefono()
                     + "' WHERE artistaid = '" + id + "'";
         }
 

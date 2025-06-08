@@ -8,10 +8,10 @@ public class Connect {
 
     public static Connection conectar(){
         Connection conexion;
-        String host = "jdbc:mariadb://localhost:3307/";
+        String host = "jdbc:mariadb://localhost:3306/";
         String user = "root";
         String pass = "";
-        String bd = "ferias_de_arte";
+        String bd = "proyecto";
 
         try {
             conexion = DriverManager.getConnection(host+bd, user, pass);
