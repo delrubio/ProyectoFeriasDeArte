@@ -10,19 +10,18 @@ import java.io.IOException;
 public class Application extends javafx.application.Application {
 
     static Scene scene;
-    static FXMLLoader fxmlLoader;
 
     @Override
     public void start(Stage stage) throws IOException {
-        fxmlLoader = new FXMLLoader(Application.class.getResource("main-view.fxml"));
-        scene = new Scene(fxmlLoader.load(), 800, 500);
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("main-view.fxml"));
+        scene = new Scene(fxmlLoader.load(), 1000, 800);
         stage.setTitle("Pantalla Principal");
         stage.setScene(scene);
         stage.show();
     }
 
-    public static Parent loadFXML(String fxml) throws IOException {
-        fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
+    private static Parent loadFXML(String fxml) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
 

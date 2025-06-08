@@ -1,6 +1,8 @@
 package org.example.feriasdearte.Mantenimientos;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import org.example.feriasdearte.Objetos.Artistas;
 import org.example.feriasdearte.Objetos.Asistentes;
 import org.example.feriasdearte.Objetos.Catalogo;
 
@@ -11,7 +13,7 @@ import java.sql.Statement;
 
 public class ManCatalogo {
 
-    static ObservableList<Catalogo> catalogoList;
+    static ObservableList<Catalogo> catalogoList = FXCollections.observableArrayList();
 
     public static ObservableList<Catalogo> consultar(Connection conexion){
 

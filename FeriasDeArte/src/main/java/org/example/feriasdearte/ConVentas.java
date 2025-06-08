@@ -1,10 +1,9 @@
-package org.example.feriasdearte.Controladores;
+package org.example.feriasdearte;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import org.example.feriasdearte.Application;
 import org.example.feriasdearte.Conexion.Connect;
 import org.example.feriasdearte.Mantenimientos.ManVentas;
 import org.example.feriasdearte.Objetos.Ventas;
@@ -53,12 +52,12 @@ public class ConVentas {
 
     @FXML
     public void buttonInicio() throws IOException {
-        Application.setRoot("main-view.fxml");
+        Application.setRoot("main-view");
     }
 
     @FXML
-    public void generarFactura(){
-
+    public void generarFactura() throws IOException {
+        ManVentas.factura(tablaVentas.getSelectionModel().getSelectedItem());
     }
 
 

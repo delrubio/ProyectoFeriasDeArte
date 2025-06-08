@@ -8,7 +8,7 @@ public class Connect {
 
     public static Connection conectar(){
         Connection conexion;
-        String host = "jdbc:mariadb://localhost:3306/";
+        String host = "jdbc:mariadb://localhost:3307/";
         String user = "root";
         String pass = "";
         String bd = "ferias_de_arte";

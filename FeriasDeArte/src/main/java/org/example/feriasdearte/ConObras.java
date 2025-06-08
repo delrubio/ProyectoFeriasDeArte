@@ -1,13 +1,11 @@
-package org.example.feriasdearte.Controladores;
+package org.example.feriasdearte;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import org.example.feriasdearte.Application;
 import org.example.feriasdearte.Conexion.Connect;
-import org.example.feriasdearte.Mantenimientos.ManArtistas;
 import org.example.feriasdearte.Mantenimientos.ManObras;
 import org.example.feriasdearte.Objetos.Obras;
 
@@ -55,6 +53,9 @@ public class ConObras {
     private TextField artistaTextField;
 
     @FXML
+    private Button guardarButton;
+
+    @FXML
     private Button inicio;
 
     @FXML
@@ -73,12 +74,13 @@ public class ConObras {
 
     @FXML
     public void buttonInicio() throws IOException {
-        Application.setRoot("main-view.fxml");
+        Application.setRoot("main-view");
     }
 
     @FXML
     public void onEditarButtonClickObras(){
 
+        guardarButton.setDisable(false);
         Obras obras = tablaObras.getSelectionModel().getSelectedItem();
 
         if (obras != null){
@@ -90,9 +92,6 @@ public class ConObras {
         }else {
             System.out.println("No hay filas seleccionadas");
         }
-
-
-
     }
 
     @FXML
@@ -106,6 +105,7 @@ public class ConObras {
             System.out.println("No hay filas seleccionadas");
         }
 
+        tablaObras.setItems(ManObras.consultar(BD));
     }
 
     @FXML
@@ -150,6 +150,7 @@ public class ConObras {
         artistaTextField.clear();
 
         tablaObras.setItems(ManObras.consultar(BD));
+        guardarButton.setDisable(true);
     }
 
 }

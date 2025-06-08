@@ -1,4 +1,4 @@
-package org.example.feriasdearte.Controladores;
+package org.example.feriasdearte;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -6,7 +6,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import org.example.feriasdearte.Application;
 import org.example.feriasdearte.Conexion.Connect;
 import org.example.feriasdearte.Mantenimientos.ManAsistentes;
 import org.example.feriasdearte.Objetos.Asistentes;
@@ -43,6 +42,9 @@ public class ConAsistentes {
     private TextField emailTextField;
 
     @FXML
+    private Button guardarButton;
+
+    @FXML
     private Button inicio;
 
     @FXML
@@ -59,12 +61,13 @@ public class ConAsistentes {
 
     @FXML
     public void buttonInicio() throws IOException {
-        Application.setRoot("main-view.fxml");
+        Application.setRoot("main-view");
     }
 
     @FXML
     public void onEditarButtonClickAsistentes(ActionEvent actionEvent){
 
+        guardarButton.setDisable(false);
         Asistentes asistente = tablaAsistentes.getSelectionModel().getSelectedItem();
 
         if (asistente !=  null){
@@ -87,6 +90,8 @@ public class ConAsistentes {
         }else {
             System.out.println("No hay filas seleccionadas");
         }
+
+        tablaAsistentes.setItems(ManAsistentes.consultar(BD));
 
     }
 
@@ -124,6 +129,7 @@ public class ConAsistentes {
         telefonoTextField.clear();
 
         tablaAsistentes.setItems(ManAsistentes.consultar(BD));
+        guardarButton.setDisable(true);
     }
 
 }

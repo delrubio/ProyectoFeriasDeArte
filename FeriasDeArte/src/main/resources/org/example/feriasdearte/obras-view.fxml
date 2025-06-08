@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -10,14 +9,14 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.feriasdearte.Controladores.ConObras">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.feriasdearte.ConObras">
     <children>
         <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="626.0" prefWidth="906.0" spacing="20.0">
             <padding>
                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
             </padding>
             <children>
-                <TableView fx:id="tablaObras" prefHeight="200.0" prefWidth="200.0">
+                <TableView fx:id="tablaObras" prefHeight="400.0" prefWidth="200.0">
                     <columns>
                         <TableColumn fx:id="idObra" prefWidth="158.4000244140625" text="ObraID" />
                         <TableColumn fx:id="tituloTable" prefWidth="113.59993934631348" text="Titulo" />
@@ -27,13 +26,12 @@
                   <TableColumn fx:id="artistaTable" prefWidth="178.39996337890625" text="Artista" />
                     </columns>
                 </TableView>
-                <HBox alignment="CENTER" layoutX="30.0" layoutY="439.0" prefHeight="100.0" prefWidth="200.0">
+                <HBox alignment="CENTER" layoutX="30.0" layoutY="439.0" prefHeight="30.0" prefWidth="200.0">
                     <children>
                         <Button fx:id="editarBotton" onAction="#onEditarButtonClickObras" text="Editar" />
                         <Button fx:id="eliminarBotton" layoutX="10.0" layoutY="10.0" onAction="#onEliminarButtonClickObras" text="Eliminar" />
                     </children>
                 </HBox>
-                <Label fx:id="welcomeText" />
                 <TextField fx:id="tituloTextField" promptText="Introduce un Título" />
                 <TextField fx:id="descripcionTextField" layoutX="30.0" layoutY="362.0" promptText="Introduce una descripcion" />
                 <TextField fx:id="precioTextField" promptText="Introduce un precio" />

@@ -1,12 +1,12 @@
-package org.example.feriasdearte.Controladores;
+package org.example.feriasdearte;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import org.example.feriasdearte.Application;
 import org.example.feriasdearte.Conexion.Connect;
+import org.example.feriasdearte.Mantenimientos.ManAsistentes;
 import org.example.feriasdearte.Mantenimientos.ManCatalogo;
 import org.example.feriasdearte.Objetos.Catalogo;
 
@@ -42,6 +42,9 @@ public class ConCatalogo {
     private TextField feriaTextField;
 
     @FXML
+    private Button guardarButton;
+
+    @FXML
     private Button inicio;
 
     @FXML
@@ -58,12 +61,13 @@ public class ConCatalogo {
 
     @FXML
     public void buttonInicio() throws IOException {
-        Application.setRoot("main-view.fxml");
+        Application.setRoot("main-view");
     }
 
     @FXML
     public void onEditarButtonClickCatalogo(){
 
+        guardarButton.setDisable(false);
         Catalogo catalogo = tablaCatalogo.getSelectionModel().getSelectedItem();
 
         if (catalogo != null){
@@ -87,6 +91,7 @@ public class ConCatalogo {
             System.out.println("No hay filas seleccionadas");
         }
 
+        tablaCatalogo.setItems(ManCatalogo.consultar(BD));
     }
 
     @FXML
@@ -122,6 +127,7 @@ public class ConCatalogo {
         feriaTextField.clear();
 
         tablaCatalogo.setItems(ManCatalogo.consultar(BD));
+        guardarButton.setDisable(true);
 
     }
 

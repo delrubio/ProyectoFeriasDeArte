@@ -2,6 +2,7 @@ package org.example.feriasdearte.Mantenimientos;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import org.example.feriasdearte.Objetos.Artistas;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -10,10 +11,12 @@ import java.sql.Statement;
 
 public class ManArtistas {
 
-    public static ObservableList<org.example.feriasdearte.Objetos.Artistas> consultar(Connection conexion){
+    static ObservableList<Artistas> listaArtistas = FXCollections.observableArrayList();
+
+    public static ObservableList<Artistas> consultar(Connection conexion){
 
         String query = "SELECT * FROM artistas";
-        ObservableList<org.example.feriasdearte.Objetos.Artistas> listaArtistas = FXCollections.observableArrayList();
+
         Statement stmt;
         ResultSet resultado;
         try {
@@ -87,6 +90,7 @@ public class ManArtistas {
             stmt = conexion.createStatement();
             stmt.executeUpdate(query);
             System.out.println("-- ARTISTA ELIMINADO --");
+            consultar(conexion);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             throw new RuntimeException(e);
@@ -115,6 +119,7 @@ public class ManArtistas {
             stmt = conexion.createStatement();
             stmt.executeUpdate(query);
             System.out.println("-- ARTISTA MODIFICADO --");
+            consultar(conexion);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             throw new RuntimeException(e);
